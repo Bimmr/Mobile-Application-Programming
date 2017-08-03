@@ -1,0 +1,43 @@
+<!--
+Mobile Application Programming
+Final Project
+Author: Randy Bimm
+Date:   4/19/17
+-->
+<div id="pageSettings" data-role="page">
+    <header data-position="fixed" data-role="header">
+        <h1>Settings</h1>
+        <a href="#navbar" data-role="none"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+    </header>
+
+    <section data-role="content">
+        <form id="frmSettings">
+            <div data-role="fieldcontain">
+                <label for="txtSettingsEmail">Email:</label>
+
+                <input type="email" id="txtSettingsEmail" name="txtSettingsEmail" data-clear-btn="true" required>
+            </div>
+
+            <input type="button" data-role="button" id="btnSettingsSave" value="Save">
+        </form>
+        <br>
+        <input type="button" data-role="button" id="btnSettingsAbout" value="About">
+
+        <!--About Popup-->
+        <div id="popupAbout" data-role="popup" data-transition="turn">
+            <header data-role="header">
+                <h1>Created by:</h1>
+                <a href="#" data-role="none" data-rel="back"><i class="fa fa-close fa-3x" aria-hidden="true"></i></a>
+            </header>
+            <section data-role="content">
+                <br>
+                <h3>Randy Bimm</h3>
+                <p>Rbimm5674@Conestogac.on.ca</p>
+                <hr>
+                <h3>Derek Fusari</h3>
+                <p>Dfusari5799@Conestogac.on.ca</p>
+            </section>
+        </div>
+    </section>
+</div>
+

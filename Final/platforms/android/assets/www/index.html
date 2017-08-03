@@ -1,0 +1,117 @@
+<!--
+Mobile Application Programming 
+Final Project
+Author: Randy Bimm
+Date:   4/8/17
+
+
+TODO:
+ - cordova plugin add cordova-plugin-file
+ - cordova plugin add camera
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+
+        <title>Book Worm</title>
+        <link rel="shortcut icon" href="img/rbFavicon.ico" type="image/x-icon">
+
+        <!--JavaScript-->
+        <script type="text/javascript" src="js/lib/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.js"></script>
+
+        <script type="text/javascript" src="js/database.js"></script>
+        <script type="text/javascript" src="js/facade.js"></script>
+        <script type="text/javascript" src="js/DAL.js"></script>
+        <script type="text/javascript" src="js/global.js"></script>
+        <script type="text/javascript" src="js/util.js"></script>
+        <script src="js/camera.js"></script>
+        <script src="cordova.js"></script>
+
+        <!--StyleSheet-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css"/>
+        <link rel="stylesheet" href="css/lib/font-awesome.css">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+
+        <!--Navbar-->
+        <div data-role="panel" class="navbar" id="navbar" data-position-fixed="true" data-display="overlay"
+             data-theme="a">
+            <h1>Menu</h1>
+            <hr>
+            <ul data-role="listview">
+                <li data-icon="home"><a href="#pageHome">HOME</a></li>
+                <li data-icon="search"><a href="#pageReviewSearch">SEARCH </a></li>
+                <li data-icon="grid"><a href="#pageSaved">SAVED</a></li>
+                <li data-icon="gear"><a href="#pageSettings">SETTINGS</a></li>
+            </ul>
+            <img src="img/icon.png">
+            <div class="bottom-nav">
+                <hr>
+                <p>&copy; 2017 Randy Bimm, Derek Fusari</p>
+            </div>
+        </div>
+
+        <!--Home Page-->
+        <div id="pageHome" data-role="page">
+            <section id="home-wrapper" data-role="content">
+                <div id="home-icon-wrapper">
+                    <a href="#pageReviewSearch">
+                        <div class="home-icon">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x" aria-hidden="true"></i>
+                                <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
+                            </span>
+                            <p>SEARCH</p>
+                        </div>
+                    </a>
+                    <a href="#pageSaved">
+                        <div class="home-icon">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x" aria-hidden="true"></i>
+                                <i class="fa fa-floppy-o fa-stack-1x" aria-hidden="true"></i>
+                            </span>
+                            <p>SAVED</p>
+                        </div>
+                    </a>
+                    <a href="#pageSettings">
+                        <div class="home-icon">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-square-o fa-stack-2x" aria-hidden="true"></i>
+                                <i class="fa fa-cogs fa-stack-1x" aria-hidden="true"></i>
+                            </span>
+                            <p>SETTINGS</p>
+                        </div>
+                    </a>
+
+                    <div id="home-text-wrapper">
+                        <h1>Book Worms</h1>
+                        <p>Not sure if you want that book? Then look it up in our list, and look at some peer
+                            reviews.</p>
+                    </div>
+                </div>
+            </section>
+            <footer data-role="footer" data-position="fixed">
+                <h1>&copy; 2017 Randy Bimm, Derek Fusari</h1>
+            </footer>
+
+            <div id="popupGetEmail" data-role="popup" data-dismissible="false">
+                <header data-role="header">
+                    <h1>Welcome!</h1>
+                </header>
+                <section data-role="content">
+                    <p>We'll need your email to get started!</p>
+                    <form id="frmGetEmail">
+                        <label for="txtHomeEmail">Email Address:</label>
+                        <input type="email" id="txtHomeEmail" name="txtHomeEmail">
+                        <input type="submit" id="btnHomeEmail" value="Submit">
+                    </form>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

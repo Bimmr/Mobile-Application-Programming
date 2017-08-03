@@ -1,0 +1,88 @@
+<!--
+Mobile Application Programming
+Final Project
+Author: Randy Bimm
+Date:   4/8/17
+-->
+<div id="pageReviewSearch" data-role="page">
+    <header data-position="fixed" data-role="header">
+        <h1>Search for a Book</h1>
+        <a href="#navbar" data-role="none"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+    </header>
+
+    <section data-role="content">
+        <form id="frmSearchBook">
+            <p id="searchErrorText"/>
+            <div data-role="fieldcontain">
+                <label for="txtSearchName">Book Title:</label>
+                <input type="text" id="txtSearchName" name="txtSearchName" data-clear-btn="true">
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="txtSearchAuthor">Author: </label>
+                <input type="text" id="txtSearchAuthor" name="txtSearchAuthor" data-clear-btn="true">
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="txtSearchGenre">Genre: </label>
+                <select id="txtSearchGenre" name="txtSearchGenre">
+                    <option value="-1"> ---</option>
+                </select>
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="datSearchDatePublished">Publish Date:</label>
+                <input type="date" id="datSearchDatePublished" name="datSearchDatePublished" data-clear-btn="true">
+            </div>
+
+            <input type="submit" data-role="button" id="btnSearchBooks" value="Search">
+        </form>
+    </section>
+</div>
+
+
+<div id="pageShowReviews" data-role="page">
+    <header data-position="fixed" data-role="header">
+        <h1>Book List</h1>
+        <a href="#navbar" data-role="none"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+    </header>
+    <section data-role="content">
+        <a href="#pageReviewSearch" data-role="button" id="btnSearchAgain" data-icon="back">New Search</a>
+        <div id="reviewList">
+        </div>
+    </section>
+</div>
+
+<div id="pageAddReview" data-role="page">
+    <header data-position="fixed" data-role="header">
+        <h1>Write a Review!</h1>
+        <a href="#navbar" data-role="none"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+    </header>
+    <section data-role="content">
+
+        <form id="frmWriteReview">
+
+            <div data-role="fieldcontain">
+                <label for="txtAddReviewEmail">Your Email:</label>
+                <input type="text" id="txtAddReviewEmail" name="txtAddReviewEmail" data-clear-btn="true">
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="txtAddReviewTitle">Review Title:</label>
+                <input type="text" id="txtAddReviewTitle" name="txtAddReviewTitle" data-clear-btn="true">
+
+                <label for="txtAddReviewText">Review:</label>
+                <textarea id="txtAddReviewText" name="txtAddReviewText" data-clear-btn="true"></textarea>
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="numAddReviewRating">Rating</label>
+                <input type="number" id="numAddReviewRating" name="numAddReviewRating" data-clear-btn="true" max="5"
+                       min="1">
+            </div>
+
+            <input type="submit" data-role="button" id="btnAddReviewSubmit" value="Submit Review">
+
+        </form>
+    </section>
+</div>

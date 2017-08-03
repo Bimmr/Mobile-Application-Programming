@@ -1,0 +1,38 @@
+<!--
+Mobile Application Programming
+Final Project
+Author: Derek Fusari
+Date:   4/19/17
+-->
+<div id="pageSaved" data-role="page">
+    <header data-position="fixed" data-role="header">
+        <h1>Saved Books</h1>
+        <a href="#navbar" data-role="none"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
+    </header>
+
+    <section data-role="content">
+
+        <button type="button" id="btnCapturePhoto" name="btnCapturePhoto" data-icon="plus"
+                data-iconpos="left"
+                data-theme="a" data-inline="false" class="">Take a Picture of a Book!
+        </button>
+
+        <div id="savedBookGallery">
+        </div>
+
+
+        <!--Bigger Image Popup-->
+        <div id="popupImage" data-role="popup" data-transition="fade">
+            <header data-role="header">
+                <h1>Image:</h1>
+                <a href="#" data-role="none" data-rel="back"><i class="fa fa-close fa-3x" aria-hidden="true"></i></a>
+            </header>
+            <section data-role="content">
+                <div id="popupImage-wrapper">
+                    <img id="popupImageImg">
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+

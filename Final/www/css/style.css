@@ -1,0 +1,141 @@
+/**
+ * Created by Randy on 02/20/17.
+*/
+
+/*Center the elements*/
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* JQuery validation styling */
+label.error {
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border: 2px red solid;
+}
+
+#navbar img {
+    position: relative;
+    top: 40px;
+    margin: auto auto;
+    width: 200px;
+    display: block;
+    vertical-align: middle;
+}
+
+#navbar .bottom-nav {
+    position: absolute;
+    display: table;
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+}
+
+#navbar .bottom-nav p {
+    font-size: .8em;
+    position: relative;
+    text-align: center;
+}
+
+#home-icon-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+#home-icon-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+.home-icon {
+    padding-top: 5px;
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+
+    box-shadow: 0 2px 5px #d4d4d4;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    display: flex;
+    background-color: #efefef;
+
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.home-icon:hover, .home-icon:active {
+    background-color: #dadada;
+}
+
+#pageHome {
+    height: 80%;
+    background: linear-gradient(to bottom, #e6e6e6, #FFF);
+}
+
+#home-wrapper {
+    height: 94%;
+}
+
+#home-text-wrapper {
+    position: absolute;
+    bottom: 40px;
+    display: block;
+    border-top: 1px solid #DDD;
+    text-align: center;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+#pageReviewSearch .ui-input-text, #pageSettings .ui-input-text {
+    padding-right: 0px !important;
+}
+
+#reviewList li p:last-of-type {
+    font-style: italic;
+}
+
+#reviewList li .bottom {
+    bottom: 1em;
+    top: auto;
+}
+
+#reviewList li .bottom i {
+    color: gray;
+    background-color: #FAFAFA;
+    position: relative;
+    left: 3px;
+}
+
+#reviewList li p {
+    white-space: normal;
+}
+
+#popupAbout section {
+    padding-bottom: 50px;
+}
+
+header i {
+    color: dimgray;
+    padding-left: 5px;
+}
+
+header i:focus, header i:active {
+    color: white;
+}
+#popupImage-wrapper{
+    height: 100%;
+}
+#popupImageImg {
+    height: 100%;
+}

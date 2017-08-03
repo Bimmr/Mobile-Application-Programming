@@ -1,0 +1,248 @@
+<!--
+Mobile Application Programming 
+Assignment 2
+Author: Randy Bimm
+Date:   3/9/17
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+
+        <title>RBFeedbackA1</title>
+        <link rel="shortcut icon" href="img/rbFavicon.ico" type="image/x-icon">
+
+        <!--JavaScript-->
+        <script type="text/javascript" src="js/lib/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.js"></script>
+
+        <script type="text/javascript" src="js/rbdatabase.js"></script>
+        <script type="text/javascript" src="js/rbfeedbackDAL.js"></script>
+        <script type="text/javascript" src="js/rbglobal.js"></script>
+        <script type="text/javascript" src="js/rbutil.js"></script>
+
+        <!--StyleSheet-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css"/>
+        <link rel="stylesheet" href="css/rbmystyle.css"/>
+    </head>
+    <body>
+
+        <div id="rbHomePage" data-role="page">
+            <header data-position="fixed" data-theme="b" data-role="header">
+                <h1>RB Feedback A2</h1>
+                <div data-role="navbar" data-position="fixed">
+                    <ul>
+                        <li><a href="#rbHomePage" data-icon="home" data-theme="a"
+                               class="ui-button-active ui-state-persist">Home</a></li>
+                        <li><a href="#rbAddFeedbackPage" data-icon="plus" data-theme="a" class="">Add</a></li>
+                        <li><a href="#rbViewFeedbackPage" data-icon="grid" data-theme="a" class="">Reviews</a></li>
+                        <li><a href="#rbSettingsPage" data-icon="gear" data-theme="a" class="">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h1>Randy Bimm's Feedback A2 App</h1>
+                <p>Welcome to the Randy Bimm Feedback A2 app. A prototype designed for mogile programming class. This is
+                    the first iteration of the app to keep track of different places you visited along with your
+                    reviews.</p>
+                <img src="img/rbPicture.png" width="250px" height="250px" alt="image" class="center"
+                     style="border-radius: 10px"/>
+                <p>Please feel free to contact me if you have any suggestions!</p>
+
+                <a href="#" data-icon="plus" type="button" data-role="button">Call: 123.456.7890</a>
+                <a href="#" data-icon="plus" type="button" data-role="button">RBimm5674@conestogac.on.ca</a>
+                <p>Website:</p>
+                <a href="#" data-icon="plus" type="button" data-role="button">Conestoga College</a>
+
+
+            </section>
+            <footer data-position="fixed" data-theme="b" data-role="footer">
+                <h4>&copy; 2016 Randy Bimm</h4>
+            </footer>
+        </div>
+
+        <div id="rbAddFeedbackPage" data-role="page">
+
+            <header data-position="fixed" data-theme="b" data-role="header">
+                <h1>Add Feedback</h1>
+                <div data-role="navbar" data-position="fixed">
+                    <ul>
+                        <li><a href="#rbHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#rbAddFeedbackPage" data-icon="plus" data-theme="a"
+                               class="ui-button-active ui-state-persist">Add</a></li>
+                        <li><a href="#rbViewFeedbackPage" data-icon="grid" data-theme="a" class="">Reviews</a></li>
+                        <li><a href="#rbSettingsPage" data-icon="gear" data-theme="a" class="">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+
+                <form id="rbFrmAdd" name="rbFrmAdd">
+                    <label for="rbAddTxtBusinessName">Business Name:</label>
+                    <input type="text" id="rbAddTxtBusinessName" name="rbAddTxtBusinessName">
+                    <label for="rbAddTxtReviewerEmail">Reviewer Email:</label>
+                    <input type="email" id="rbAddTxtReviewerEmail" name="rbAddTxtReviewerEmail">
+                    <label for="rbAddTxtReviewerComments">Reviewer Comments:</label>
+                    <textarea rows="2" id="rbAddTxtReviewerComments" name="rbAddTxtReviewerComments"></textarea>
+                    <label for="rbAddTxtDate">Review Date:</label>
+                    <input type="date" id="rbAddTxtDate" name="rbAddTxtDate">
+                    <label for="rbAddTxtAddRatings"><b>Do you want to add your ratings?</b></label>
+                    <input type="checkbox" id="rbAddTxtAddRatings" name="rbAddTxtAddRatings" checked>
+                    <fieldset id="rbAddReviews" name="rbAddReviews">
+                        <label for="rbAddNumRatingFood">Food Quality (0-5):</label>
+                        <input type="number" id="rbAddNumRatingFood" name="rbAddNumRatingFood" value="0">
+                        <label for="rbAddNumRatingService">Service (0-5):</label>
+                        <input type="number" id="rbAddNumRatingService" name="rbAddNumRatingService" value="0">
+                        <label for="rbAddNumRatingValue">Value (0-5):</label>
+                        <input type="number" id="rbAddNumRatingValue" name="rbAddNumRatingValue" value="0">
+                        <label for="rbAddNumRatingCalculated">Overall Rating (Calculated):</label>
+                        <input type="text" id="rbAddNumRatingCalculated" name="rbAddNumRatingCalculated" readonly>
+                    </fieldset>
+                    <button type="submit" href="#" data-role="button" data-inline="true" id="rbAddBtnSave"
+                            name="rbAddBtnSave"
+                            style="background-color: #29abe2; border: 1px solid #29abe2; color: #fff; text-shadow: 1px 1px black">
+                        Save
+                    </button>
+                </form>
+            </section>
+            <footer data-position="fixed" data-theme="b" data-role="footer">
+                <h4>&copy; 2016 Randy Bimm</h4>
+            </footer>
+        </div>
+
+        <div id="rbViewFeedbackPage" data-role="page">
+
+            <header data-position="fixed" data-theme="b" data-role="header">
+                <h1>View Feedback</h1>
+                <div data-role="navbar" data-position="fixed">
+                    <ul>
+                        <li><a href="#rbHomePage" data-icon="home" data-theme="a"
+                               >Home</a></li>
+                        <li><a href="#rbAddFeedbackPage" data-icon="plus" data-theme="a" class="">Add</a></li>
+                        <li><a href="#rbViewFeedbackPage" data-icon="grid" data-theme="a"
+                               class="ui-button-active ui-state-persist">Reviews</a></li>
+                        <li><a href="#rbSettingsPage" data-icon="gear" data-theme="a" class="">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+
+                <ul id="rbViewFeedbackList" data-role="listview" class="ui-listview-inset">
+                    <li data-icon="false">
+                        <a href="#rbEditFeedbackPage">
+                            <h1>Buissness Name: My Tea Shop</h1>
+                            <p>Reviewer Email: my@email.com</p>
+                            <p>Comments: Okay tea.</p>
+                            <p>Overall Rating: 90%</p>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#rbEditFeedbackPage">
+                            <h1>Buissness Name: My Pizza Shop</h1>
+                            <p>Reviewer Email: my@email.com</p>
+                            <p>Comments: Okay pizza.</p>
+                            <p>Overall Rating: 97%</p>
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+            <footer data-position="fixed" data-theme="b" data-role="footer">
+                <h4>&copy; 2016 Randy Bimm</h4>
+            </footer>
+        </div>
+        <div id="rbEditFeedbackPage" data-role="page">
+            <header data-position="fixed" data-theme="b" data-role="header">
+                <h1>Modify Feedback</h1>
+                <div data-role="navbar" data-position="fixed">
+                    <ul>
+                        <li><a href="#rbHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#rbAddFeedbackPage" data-icon="plus" data-theme="a" class="">Add</a></li>
+                        <li><a href="#rbViewFeedbackPage" data-icon="grid" data-theme="a"
+                               class="ui-button-active ui-state-persist">Reviews</a></li>
+                        <li><a href="#rbSettingsPage" data-icon="gear" data-theme="a" class="">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form id="rbFrmEdit" name="rbFrmEdit">
+                    <label for="rbEditTxtBusinessName">Business Name:</label>
+                    <input type="text" id="rbEditTxtBusinessName" name="rbEditTxtBusinessName" value="My Tea Shop">
+                    <label for="rbEditTxtReviewerEmail">Reviewer Email:</label>
+                    <input type="email" id="rbEditTxtReviewerEmail" name="rbEditTxtReviewerEmail" value="my@email.com">
+                    <label for="rbEditTxtReviewerComments">Reviewer Comments:</label>
+                    <textarea rows="2" id="rbEditTxtReviewerComments"
+                              name="rbEditTxtReviewerComments">Okay Tea.</textarea>
+                    <label for="rbAddTxtDate">Review Date:</label>
+                    <input type="date" id="rbEditTxtDate" name="rbEditTxtDate">
+                    <label for="rbEditTxtAddRatings"><b>Do you want to Edit your ratings?</b></label>
+                    <input type="checkbox" id="rbEditTxtAddRatings" name="rbEditTxtAddRatings" checked>
+                    <fieldset id="rbEditReviews" name="rbEditReviews">
+                        <label for="rbEditNumRatingFood">Food Quality (0-5):</label>
+                        <input type="number" id="rbEditNumRatingFood" name="rbEditNumRatingFood" value="0">
+                        <label for="rbEditNumRatingService">Service (0-5):</label>
+                        <input type="number" id="rbEditNumRatingService" name="rbEditNumRatingService" value="0">
+                        <label for="rbEditNumRatingValue">Value (0-5):</label>
+                        <input type="number" id="rbEditNumRatingValue" name="rbEditNumRatingValue" value="0">
+                        <label for="rbEditNumRatingCalculated">Overall Rating (Calculated):</label>
+                        <input type="text" id="rbEditNumRatingCalculated" name="rbEditNumRatingCalculated" readonly>
+                    </fieldset>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <button type="button" data-role="button" data-inline="true" id="rbEditBtnCancel"
+                                name="rbEditBtnCancel" style="background-color: #fcee21;  border: 1px solid #fcee21;">
+                            Cancel
+                        </button>
+                        <button type="button" data-role="button" data-inline="true" id="rbEditBtnDelete"
+                                name="rbEditBtnDelete" data-theme="b">Delete
+                        </button>
+                        <button type="button" data-role="button" data-inline="true" id="rbEditBtnUpdate"
+                                name="rbEditBtnUpdate"
+                                style="background-color: #29abe2; border: 1px solid #29abe2; color: #fff; text-shadow: 1px 1px black">
+                            Update
+                        </button>
+                    </fieldset>
+                </form>
+            </section>
+            <footer data-position="fixed" data-theme="b" data-role="footer">
+                <h4>&copy; 2016 Randy Bimm</h4>
+            </footer>
+        </div>
+
+        <div id="rbSettingsPage" data-role="page">
+            <header data-position="fixed" data-theme="b" data-role="header">
+                <h1>Modify Settings</h1>
+                <div data-role="navbar" data-position="fixed">
+                    <ul>
+                        <li><a href="#rbHomePage" data-icon="home" data-theme="a">Home</a></li>
+                        <li><a href="#rbAddFeedbackPage" data-icon="plus" data-theme="a" class="">Add</a></li>
+                        <li><a href="#rbViewFeedbackPage" data-icon="grid" data-theme="a" class="">Reviews</a></li>
+                        <li><a href="#rbSettingsPage" data-icon="gear" data-theme="a"
+                               class="ui-button-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+
+                <form id="rbFromDefault">
+                    <label for="rbDefaultTxtReviewersEmail">Default Reviewer Email:</label>
+                    <input type="text" id="rbDefaultTxtReviewersEmail" name="rbDefaultTxtReviewersEmail">
+                    <button type="button" href="#" data-role="button" id="rbDefaultBtnSave" name="rbDefaultBtnSave"
+                            style="background-color: #29abe2; border: 1px solid #29abe2; color: #fff; text-shadow: 1px 1px black">
+                        Save
+                        Defaults
+                    </button>
+                    <button type="button" href="#" data-role="button" id="rbDefaultBtnClear" name="rbDefaultBtnClear"
+                            data-theme="b">Clear Database
+                    </button>
+                </form>
+            </section>
+            <footer data-position="fixed" data-theme="b" data-role="footer">
+                <h4>&copy; 2016 Randy Bimm</h4>
+            </footer>
+        </div>
+
+    </body>
+
+</html>
